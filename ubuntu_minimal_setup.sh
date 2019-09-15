@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Setup for a minimal linux installation using Ubuntu Minimal Server as the base
+# Setup for a minimal linux desktop installation using Ubuntu Minimal Server as the base
 echo "Run as sudo"
 
 # Install packages via apt
