@@ -40,6 +40,7 @@ texlive-most
 pirate-get
 
 ttf-inconsolata
+ttf-linux-libertine
 ttf-symbola
 
 git clone https://git.suckless.org/dmenu
