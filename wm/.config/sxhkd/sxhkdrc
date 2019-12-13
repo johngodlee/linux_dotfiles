@@ -4,7 +4,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run -fn 'monospace-14'
+	dmenu_apps.sh
 
 # Launch vim
 super + v 
@@ -14,9 +14,17 @@ super + v
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+# quit bspwm
+super + alt + q
+	prompt.sh "Are you sure you want to quit to tty?" "bspc quit"
+
+# Restart bspwm 
+super + alt + r
+	prompt.sh "Are you sure you want to restart the wm?" "bspc wm -r"
+
+# Shutdown computer
+super + alt + x 
+	prompt.sh "Are you sure you want to shutdown?" "sudo shutdown -h now"
 
 # close and kill
 super + {_,shift + }w
