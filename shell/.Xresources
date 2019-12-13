@@ -4,15 +4,11 @@ URxvt.scrollBar: false
 
 ! special
 URxvt*foreground:   #bbc5ff
-URxvt*background:   [95]#292d3e
+URxvt*background:   #292d3e
 URxvt*cursorColor:  #bbc5ff
 
-XTerm*foreground: #bbc5ff
-XTerm*background: #292d3e
-XTerm*cursorColor: #bbc5ff
-
 ! black
-*.color0:       #101010  !! originally #292d3e
+*.color0:       #292d3e
 *.color8:       #434758
 
 ! red
@@ -42,3 +38,14 @@ XTerm*cursorColor: #bbc5ff
 ! white
 *.color7:       #d0d0d0
 *.color15:      #ffffff
+
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher: lynx
+URxvt.url-select.underline: true
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+
+URxvt.resize-font.smaller: C-j
+URxvt.resize-font.bigger: C-k
+

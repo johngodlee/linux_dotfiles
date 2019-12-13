@@ -1,5 +1,3 @@
-" A full .vimrc for use within normal vim on macos
-
 " Set folding to markers for .vimrc only 
 " vim: foldmethod=marker
 
@@ -9,11 +7,11 @@ set nocompatible
 " map `A` (append at end of line) to `a` (append in place)
 nnoremap a A
 
-" Move by visual lines rather than actual lines with `k` `j`
-nnoremap k gk
-nnoremap j gj
-nnoremap gk k
-nnoremap gj j
+" Move by visual lines rather than actual lines with `k` `j`, but preserve
+" moving by actual lines with bigger jumps like `6j`
+noremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+noremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
+
 
 " Resize splits more conveniently using the leader key
 nnoremap <Leader>h <C-W>>
@@ -56,6 +54,8 @@ set backspace=2
 " }}}
 
 " Appearance {{{
+
+set background=dark
 
 " enable syntax highlighting
 syntax on
