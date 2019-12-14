@@ -30,8 +30,6 @@ Desktop () {
 	echo "$cur/$tot"
 }
 
-
-
 sep=" | "
 
 while true; do

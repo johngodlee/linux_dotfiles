@@ -1,7 +1,7 @@
 git
 ssh
 wget
-vim
+gvim
 vifm
 lynx
 w3m
@@ -26,16 +26,14 @@ drive
 wicd
 bspwm
 sxhkd
-polybar
-xclip
+lemonbar
 cmus
 ripgrep
-ledger
-neofetch
 newsboat
 stow
-youtube-dl
 texlive-most
+falkon
+network-manager
 
 pirate-get
 
