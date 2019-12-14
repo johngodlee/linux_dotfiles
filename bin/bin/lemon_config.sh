@@ -15,13 +15,26 @@ Bat () {
 }
 
 Wifi () {
-	iw dev wlp2s0 link | grep "SSID" | awk '{print $2}'
+	eth=$(cat /sys/class/net/enp1s0/operstate)
+	if [ "$eth" = "up" ]; then
+		echo "Ethernet"
+	else
+		iw dev wlp2s0 link | grep "SSID" | awk '{print $2}'
+	fi
 }
+
+Desktop () {	
+	cur=$(bspc query -D -d focused --names)
+	tot=$(bspc query -D | wc -l)
+
+	echo "$cur/$tot"
+}
+
+
 
 sep=" | "
 
 while true; do
-	printf "%s\n" "%{l}%{r}$(Wifi)$sep$(Bat)$sep$(Clock) "
+	printf "%s\n" "%{l} $(Desktop)%{r}$(Wifi)$sep$(Bat)$sep$(Clock) "
 	sleep 1s
 done
-
