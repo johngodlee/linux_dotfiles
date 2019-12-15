@@ -1,0 +1,18 @@
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set inputbar-bg "#292d3e"
+set inputbar-fg "#ffffff"
+set statusbar-bg "#292d3e"
+set statusbar-fg "#ffffff"
+set notification-bg "#292d3e"
+set notification-fg "#ffffff"
+set page-padding 1
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map i recolor
+map p print
