@@ -16,7 +16,7 @@ super + Escape
 
 # quit bspwm
 super + alt + q
-	prompt.sh "Are you sure you want to quit to tty?" "bspc quit"
+	prompt.sh "Are you sure you want to quit to tty?" "quit_tty.sh"
 
 # Restart bspwm 
 super + alt + r

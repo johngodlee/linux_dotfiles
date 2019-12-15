@@ -19,7 +19,8 @@ bspc control --subscribe > "$PANEL_FIFO" &
 
 # clock
 while true; do
-    echo 'C' $(date '+%Y-%m-%d %H:%M:%S');sleep 1s
+    echo 'C' $(date '+%Y-%m-%d %H:%M:%S');
+    sleep 1s
 done > "$PANEL_FIFO" &
 
 # battery
@@ -31,7 +32,7 @@ while true; do
 	else
 		echo 'B' "$BATC"
 	fi
-	sleep 30s
+	sleep 60s
 done > "$PANEL_FIFO" &
 
 # alsa volume
@@ -53,6 +54,14 @@ while true; do
 	sleep 10s
 done > $PANEL_FIFO &
 
-cat "$PANEL_FIFO" | lemon_config.sh | lemonbar -g x$PANEL_HEIGHT -B "#292d3e" | sh &
+# Window manager
+while true; do
+	CUR=$(bspc query -D -d focused --names)
+	TOT=$(bspc query -D | wc -l)
+	echo 'W' "$CUR/$TOT"
+	sleep 5s
+done > $PANEL_FIFO &
+
+cat "$PANEL_FIFO" | lemon_config.sh | lemonbar -B "#292d3e" | sh &
 
 wait

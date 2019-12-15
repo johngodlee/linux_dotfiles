@@ -1,23 +1,27 @@
 #! /bin/sh
 
 num_mon=$(bspc query -M | wc -l)
-PADDING=" "
+PAD=" "
 SEP="|"
+
 
 while read -r line ; do
   case $line in
     C*)
-      clock="$PADDING${line#?}$PADDING"
-      ;;
-    B*)
-      battery="$PADDING${line#?}$PADDING"
+      clock="$PAD${line#?}$PAD"
       ;;
     V*)
-      volume="$PADDING${line#?}$PADDING"
+      volume="$PAD${line#?}$PAD$SEP"
+      ;;
+    B*)
+      battery="$PAD${line#?}$PAD$SEP"
       ;;
     L*)
-      wifi="$PADDING${line#?}$PADDING"
+      wifi="$PAD${line#?}$PAD$SEP"
+      ;;
+    W*)
+      wm="$PAD${line#?}$PAD$SEP"
       ;;
   esac
-  printf "%s\n" "%{l}%{r}${wifi}${battery}${volume}${clock}"
+  printf "%s\n" "%{l}${wm}%{r}${wifi}${battery}${volume}${clock}"
 done
