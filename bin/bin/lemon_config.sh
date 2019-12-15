@@ -1,38 +1,23 @@
-#!/bin/sh
+#! /bin/sh
 
-Clock () {
-	date '+%Y-%m-%d %H:%M:%S'
-}
+num_mon=$(bspc query -M | wc -l)
+PADDING=" "
+SEP="|"
 
-Bat () {
-	BATS=$(cat /sys/class/power_supply/BAT0/status)
-	BATC=$(cat /sys/class/power_supply/BAT0/capacity)
-	if [ "$BATS" = "Charging" ]; then
-		echo "C"
-	else
-		echo "$BATC"
-	fi
-}
-
-Wifi () {
-	eth=$(cat /sys/class/net/enp1s0/operstate)
-	if [ "$eth" = "up" ]; then
-		echo "Ethernet"
-	else
-		iw dev wlp2s0 link | grep "SSID" | awk '{print $2}'
-	fi
-}
-
-Desktop () {	
-	cur=$(bspc query -D -d focused --names)
-	tot=$(bspc query -D | wc -l)
-
-	echo "$cur/$tot"
-}
-
-sep=" | "
-
-while true; do
-	printf "%s\n" "%{l} $(Desktop)%{r}$(Wifi)$sep$(Bat)$sep$(Clock) "
-	sleep 1s
+while read -r line ; do
+  case $line in
+    C*)
+      clock="$PADDING${line#?}$PADDING"
+      ;;
+    B*)
+      battery="$PADDING${line#?}$PADDING"
+      ;;
+    V*)
+      volume="$PADDING${line#?}$PADDING"
+      ;;
+    L*)
+      wifi="$PADDING${line#?}$PADDING"
+      ;;
+  esac
+  printf "%s\n" "%{l}%{r}${wifi}${battery}${volume}${clock}"
 done
