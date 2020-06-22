@@ -10,7 +10,6 @@ offlineimap
 pandoc
 zathura
 htop
-aria2
 tmux
 msmtp
 pass
@@ -18,7 +17,6 @@ fzf
 tree
 xclip
 youtube-dl
-dmenu
 ledger
 urxvt
 golang-go
@@ -34,7 +32,6 @@ stow
 texlive-most
 falkon
 network-manager
-
 pirate-get
 
 ttf-inconsolata
