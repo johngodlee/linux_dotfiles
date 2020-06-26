@@ -26,3 +26,5 @@ PS1+=' $ '
 # Alias ls
 alias ls='ls -AFGghl --group-directories-first --color'
 
+# Alias vim
+alias v="vim"
