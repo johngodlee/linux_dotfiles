@@ -1,7 +1,6 @@
 #!/bin/sh
 
-
-cache=$(cat bin/gui_apps.cache)
+cache=$(cat ~/bin/gui_apps.cache)
 
 choice=$(printf '%s\n' $cache | dmenu -i -p "Apps")
 
