@@ -58,7 +58,7 @@ set softtabstop=0
 
 set textwidth=0
 
-" Normal backspace behaviour on OSX
+" Normal backspace behaviour
 set backspace=2
 
 " Split to right by default

@@ -1,4 +1,4 @@
-URxvt.font: xft:monospace:size=14
+URxvt.font: xft:monospace:size=12
 URxvt.scrollBar: false
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard

@@ -62,6 +62,6 @@ while true; do
 	sleep 5s
 done > $PANEL_FIFO &
 
-cat "$PANEL_FIFO" | lemon_config.sh | lemonbar -B "#292d3e" | sh &
+cat "$PANEL_FIFO" | lemon_config.sh | lemonbar -B "#292d3e" -F "#bbc5ff" | sh &
 
 wait
