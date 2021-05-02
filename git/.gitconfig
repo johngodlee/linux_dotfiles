@@ -1,0 +1,9 @@
+[user]
+	name = johngodlee
+	email = johngodlee@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes
+[commit]
+	verbose = true
+
