@@ -5,9 +5,8 @@
 $HOME/.fehbg &
 
 while true ; do
-	LOCALTIME=$(date +%Z\=%Y-%m-%dT%H:%M)
+	LOCALTIME=$(date +%Y-%m-%d\ \[%H:%M\]\ \(%Z\))
 	xsetroot -name "$LOCALTIME"
 done &
-
 
 exec dwm
