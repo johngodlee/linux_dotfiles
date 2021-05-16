@@ -16,15 +16,15 @@ super + Escape
 
 # quit bspwm
 super + alt + q
-	prompt.sh "Quit to TTY?" "quit_tty.sh"
+	dmenu_prompt.sh "Quit to TTY?" "quit_tty.sh"
 
 # Restart bspwm 
 super + alt + r
-	prompt.sh "Are you sure you want to restart the wm?" "bspc wm -r"
+	dmenu_prompt.sh "Are you sure you want to restart the wm?" "bspc wm -r"
 
 # Shutdown computer
 super + alt + x 
-	prompt.sh "Are you sure you want to shutdown?" "sudo shutdown -h now"
+	dmenu_prompt.sh "Are you sure you want to shutdown?" "sudo shutdown -h now"
 
 # close and kill
 super + {_,shift + }w
