@@ -35,7 +35,7 @@ exit
 
 `logout` and log back in
 
-Install some basics to get the xserver running:
+Install some basics:
 
 ```
 sudo apt install\
@@ -43,43 +43,15 @@ sudo apt install\
 	git\
 	ssh\
 	stow\
-	cc\
+	gcc\
+	make\
 	xorg\
-	feh
-```
-
-Deploy shell config:
-
-```
-cd 
-git clone https://github.com/johngodlee/linux_dotfiles.git
-cd ~/linux_dotfiles
-stow shell
-```
-
-Install dwm and dmenu
-
-```
-cd ~/linux_dotfiles/dwm/dwm
-sudo make clean install
-
-cd ~/linux_dotfiles/dwm/dmenu
-sudo make clean install
-
-cd ~/linux_dotfiles/dwm/st
-sudo make clean install
-```
-
-Run X:
-
-```
-startx
-```
-
-Install some other programs:
-
-```
-sudo apt install\
+	libx11-dev\
+	libxft-dev\
+	libxinerama-dev\
+	feh\
+	bspwm\
+	sxhkd\
 	bat\
 	cmus\
 	curl\
@@ -110,7 +82,23 @@ sudo apt install\
 	w3m\
 	xclip\
 	youtube-dl\
-	zathura
+	zathura\
+	rxvt-unicode
+```
+
+Deploy shell config:
+
+```
+cd 
+git clone https://github.com/johngodlee/linux_dotfiles.git
+cd ~/linux_dotfiles
+stow shell tmux bspwm git wallpapers zathura
+```
+
+Run X:
+
+```
+startx
 ```
 
 
