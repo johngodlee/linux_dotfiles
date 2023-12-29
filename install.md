@@ -2,7 +2,7 @@
 
 ## Notes 
 
-I like `tmux`, but dwm isn't really compatible with tmux. Can I possibly just use tmux for scrollback and copying in every terminal, but not use panes?
+Launch tmux default session in every new terminal window. Use tmux to allow persistent sessions.  
 
 Do these also need to be installed for dwm to work?:  `libx11-dev` `libxft-dev` `libxinerama-dev` `xinit` `x11-xserver-utils`
 
